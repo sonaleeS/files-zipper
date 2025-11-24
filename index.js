@@ -3,9 +3,7 @@ const axios = require("axios");
 const archiver = require("archiver");
 const path = require("path");
 
-// -------------------------------------------------------
 //  DOWNLOAD PDF  (supports file:// & https://)
-// -------------------------------------------------------
 async function downloadPDF(url, outputPath) {
     try {
         // Local file (file://)
@@ -36,10 +34,7 @@ async function downloadPDF(url, outputPath) {
     }
 }
 
-
-// -------------------------------------------------------
-//  ZIP CREATOR (Reusable package function)
-// -------------------------------------------------------
+//  ZIP CREATOR 
 async function zipFiles(pdfUrls, zipName = "files.zip") {
     if (!Array.isArray(pdfUrls)) pdfUrls = [pdfUrls];
 
@@ -72,13 +67,9 @@ async function zipFiles(pdfUrls, zipName = "files.zip") {
     });
 
     await archive.finalize();
-    await fs.remove(tempFolder); // cleanup temp folder
+    await fs.remove(tempFolder); 
 
     return { zipPath: outputZipPath, errorUrls };
 }
 
-
-// -------------------------------------------------------
-//  EXPORT FOR NPM PACKAGE USE
-// -------------------------------------------------------
 module.exports = { zipFiles };

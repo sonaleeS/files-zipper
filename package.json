@@ -1,6 +1,6 @@
 {
   "name": "pdf-zipper-tool",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "A Node.js utility to download multiple PDFs (URL or local) and bundle them into a single ZIP file.",
   "main": "index.js",
   "keywords": [
@@ -10,7 +10,7 @@
     "zip tool",
     "file bundler"
   ],
-  "author": "Your Name",
+  "author": "Sonalee",
   "license": "MIT",
   "files": [
     "index.js",
