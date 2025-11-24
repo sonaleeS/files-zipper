@@ -20,13 +20,13 @@ workflows.
 ## 📦 Installation
 
 ``` sh
-npm install file-zipper
+npm install pdf-zipper-tool
 ```
 
 ## 🚀 Quick Start
 
 ``` js
-const { zipFiles } = require("file-zipper");
+const { zipFiles } = require("pdf-zipper-tool");
 
 async function run() {
     const pdfUrls = [
