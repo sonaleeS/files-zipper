@@ -1,32 +1,11 @@
-# zip-pdfs Package
-
 A lightweight Node.js utility that lets you zip multiple PDF files—whether they are online URLs or local file paths—using a simple function call.
 
 ## Installation
-
-```bash
 npm install zip-pdfs
-```
 
 ## Usage
 
 Import the package and call the `zipFiles` function with an array of PDF URLs or local file paths.
-
-```javascript
-const { zipFiles } = require("zip-pdfs");
-
-(async () => {
-  const pdfUrls = [
-    "file:///home/user/Documents/example.pdf",
-    "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-  ];
-
-  const { zipPath, errorUrls } = await zipFiles(pdfUrls);
-
-  console.log("ZIP created at:", zipPath);
-  console.log("Failed URLs:", errorUrls);
-})();
-```
 
 ## What It Does
 - Accepts an array of **local file paths** or **remote PDF URLs**.
@@ -36,20 +15,3 @@ const { zipFiles } = require("zip-pdfs");
 - Returns:
   - `zipPath` → Full path of the generated ZIP file.
   - `errorUrls` → List of PDFs that failed to process.
-
-## Example Output
-```
-ZIP created at: /tmp/pdfs-1720000000000.zip
-Failed URLs: [ "https://invalid-url.com/sample.pdf" ]
-```
-
-## API
-
-### `zipFiles(pdfUrls: string[]): Promise<{ zipPath: string, errorUrls: string[] }>`
-
-**Parameters:**
-- `pdfUrls` → Array of online URLs or local file paths.
-
-**Returns:**
-- `zipPath` → Path of the ZIP file created.
-- `errorUrls` → Array of URLs that could not be processed.
